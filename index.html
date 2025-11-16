@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earn Mini App</title>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        text-align: center;
+        padding: 20px;
+    }
+    .box {
+        background: white;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px #aaa;
+    }
+    button {
+        background: #0099ff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        margin: 8px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>⭐ Earn Mini App Dashboard ⭐</h2>
+<p>Welcome! Earn money by watching ads, joining channels & inviting friends.</p>
+
+<div class="box">
+    <h3>👤 User Info</h3>
+    <p>Username: <b id="username">Guest</b></p>
+    <p>Main Balance: <b id="balance">0</b> TK</p>
+    <button onclick="claimAds()">Watch Ads (5 TK)</button>
+    <button onclick="joinTelegram()">Join Telegram (20 TK)</button>
+    <button onclick="joinYouTube()">Join YouTube (30 TK)</button>
+    <button onclick="refer()">Refer & Earn (40 TK)</button>
+</div>
+
+<div class="box">
+    <h3>💳 Withdraw</h3>
+    <p>Minimum Withdraw: 500 TK</p>
+    <button onclick="withdraw()">Withdraw Bkash/Nagad</button>
+</div>
+
+<script>
+let balance = 0;
+
+function updateBalance() {
+    document.getElementById("balance").innerText = balance;
+}
+
+function claimAds(){
+    balance += 5;
+    alert("Ads watched! +5 TK added");
+    updateBalance();
+}
+
+function joinTelegram(){
+    balance += 20;
+    alert("Telegram joined! +20 TK added");
+    updateBalance();
+}
+
+function joinYouTube(){
+    balance += 30;
+    alert("YouTube joined! +30 TK added");
+    updateBalance();
+}
+
+function refer(){
+    balance += 40;
+    alert("Referral Successful! +40 TK added");
+    updateBalance();
+}
+
+function withdraw(){
+    if(balance >= 500){
+        alert("Request Sent! Payment within 24 hours.");
+    } else {
+        alert("Minimum 500 TK required!");
+    }
+}
+</script>
+
+</body>
+</html>
